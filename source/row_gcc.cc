@@ -19,9 +19,9 @@ extern "C" {
 
 #if defined(HAS_ARGBTOYROW_SSSE3) || defined(HAS_ARGBGRAYROW_SSSE3)
 
-// Constants for ARGB
-static const uvec8 kARGBToY = {25u, 129u, 66u, 0u, 25u, 129u, 66u, 0u,
-                               25u, 129u, 66u, 0u, 25u, 129u, 66u, 0u};
+// Constants for ARGB (BT.709)
+static const uvec8 kARGBToY = {16u, 157u, 47u, 0u, 16u, 157u, 47u, 0u,
+                               16u, 157u, 47u, 0u, 16u, 157u, 47u, 0u};
 
 // JPeg full range.
 static const uvec8 kARGBToYJ = {29u, 150u, 77u, 0u, 29u, 150u, 77u, 0u,
@@ -33,14 +33,16 @@ static const uvec8 kRGBAToYJ = {0u, 29u, 150u, 77u, 0u, 29u, 150u, 77u,
 
 #if defined(HAS_ARGBTOYROW_SSSE3) || defined(HAS_I422TOARGBROW_SSSE3)
 
-static const vec8 kARGBToU = {112, -74, -38, 0, 112, -74, -38, 0,
-                              112, -74, -38, 0, 112, -74, -38, 0};
+// Constants for ARGB (BT.709)
+static const vec8 kARGBToU = {112, -87, -26, 0, 112, -87, -26, 0,
+                              112, -87, -26, 0, 112, -87, -26, 0};
 
 static const vec8 kARGBToUJ = {127, -84, -43, 0, 127, -84, -43, 0,
                                127, -84, -43, 0, 127, -84, -43, 0};
 
-static const vec8 kARGBToV = {-18, -94, 112, 0, -18, -94, 112, 0,
-                              -18, -94, 112, 0, -18, -94, 112, 0};
+// Constants for ARGB (BT.709)
+static const vec8 kARGBToV = {-10, -102, 112, 0, -10, -102, 112, 0,
+                              -10, -102, 112, 0, -10, -102, 112, 0};
 
 static const vec8 kARGBToVJ = {-20, -107, 127, 0, -20, -107, 127, 0,
                                -20, -107, 127, 0, -20, -107, 127, 0};
